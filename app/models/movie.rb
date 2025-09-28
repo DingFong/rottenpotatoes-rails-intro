@@ -10,6 +10,16 @@ class Movie < ActiveRecord::Base
       all
     end
   end
+
+  def self.sorted_by(type)
+    if type == "title"
+      order(:title)
+    elsif type == "release date"
+      order(:release_date)
+    else
+      all
+    end
+  end
 end
 
 

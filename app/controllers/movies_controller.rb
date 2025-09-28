@@ -8,11 +8,14 @@ class MoviesController < ApplicationController
 
   def index
     # @movies = Movie.all
+    # rating_filter
     @all_ratings = Movie.all_ratings
     @ratings_to_show = params[:ratings]&.keys || @all_ratings
-    @movies = Movie.with_rating(@ratings_to_show)
-    # @movies = Movie.where(rating: @ratings_to_show)
-    # puts @ratings_to_show
+    # @movies = Movie.with_rating(@ratings_to_show)
+    
+    # sort by title/Release date
+    @sort_type = params[:sort_by]
+    @movies = Movie.with_rating(@ratings_to_show).sorted_by(@sort_type)
   end
 
   def new
