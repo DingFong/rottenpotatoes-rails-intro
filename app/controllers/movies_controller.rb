@@ -25,7 +25,7 @@ class MoviesController < ApplicationController
     @sort_type = params[:sort_by] || session[:sort_by]
     @sort_by = params[:sort_by] || session[:sort_by]
 
-    @movies = Movie.with_rating(@ratings_to_show).sorted_by(@sort_type)
+    @movies = Movie.with_ratings(@ratings_to_show).sorted_by(@sort_type)
   end
 
   def new

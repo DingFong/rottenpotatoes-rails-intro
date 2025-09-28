@@ -3,7 +3,7 @@ class Movie < ActiveRecord::Base
     ['G', 'PG', 'PG-13', 'R']
   end
 
-  def self.with_rating(ratings)
+  def self.with_ratings(ratings)
     if ratings.present?
       where(rating: ratings)
     else
