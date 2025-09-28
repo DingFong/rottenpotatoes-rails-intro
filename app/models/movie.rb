@@ -14,7 +14,7 @@ class Movie < ActiveRecord::Base
   def self.sorted_by(type)
     if type == "title"
       order(:title)
-    elsif type == "release date"
+    elsif type == "release_date"
       order(:release_date)
     else
       all
