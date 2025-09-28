@@ -11,10 +11,13 @@ class MoviesController < ApplicationController
     # rating_filter
     @all_ratings = Movie.all_ratings
     @ratings_to_show = params[:ratings]&.keys || @all_ratings
-    # @movies = Movie.with_rating(@ratings_to_show)
+    @sort_by = params[:sort_by] 
     
     # sort by title/Release date
     @sort_type = params[:sort_by]
+
+
+
     @movies = Movie.with_rating(@ratings_to_show).sorted_by(@sort_type)
   end
 
