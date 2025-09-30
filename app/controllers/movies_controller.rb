@@ -27,10 +27,10 @@ class MoviesController < ApplicationController
 
     @movies = Movie.with_ratings(@ratings_to_show).sorted_by(@sort_type)
   
-    if @movies.empty?
-      @ratings_to_show = @all_ratings
-      @movies = Movie.all.sorted_by(@sort_by)
-    end
+    # if @movies.empty?
+    #   @ratings_to_show = @all_ratings
+    #   @movies = Movie.all.sorted_by(@sort_by)
+    # end
 
   end
 
