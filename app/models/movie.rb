@@ -6,6 +6,7 @@ class Movie < ActiveRecord::Base
   def self.with_ratings(ratings)
     if ratings.present?
       where(rating: ratings)
+      
     else
       all
     end
